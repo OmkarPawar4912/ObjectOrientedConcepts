@@ -18,7 +18,6 @@ namespace OOPS
         {
             Student student = new Student();
             Result result = new Result();
-
             Console.WriteLine("Student Name  :    {0}", student.GetName());
             Console.WriteLine("Subject       :    {0}", result.GetSubject());
             Console.WriteLine("Project Title :    {0}", result.GetName());
