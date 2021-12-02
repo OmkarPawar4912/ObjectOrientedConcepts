@@ -6,57 +6,45 @@ using System.Threading.Tasks;
 
 namespace OOPS
 {
-    class Department
+    class Lecturer
     {
         public static void Main(string[] args)
         {
-            Developer developer = new Developer();
-            Sales sales = new Sales();
-            Console.WriteLine("\n---------- Developer Info ----------");
-            Console.WriteLine("Developer Name : {0}", developer.GetDeveloperName());
-            Console.WriteLine("Developer Address : {0}", developer.GetDeveloperAddress());
+            Student student = new Student();
+            Console.WriteLine("Student Name :    {0}", student.GetName());
+            Console.WriteLine("Subject      :    {0}", student.GetSubject());
+            Console.WriteLine("Mark         :    {0}", student.GetMark());
+            Console.ReadLine();
 
-            Console.WriteLine("\n---------- Sales Info ----------");
-            Console.WriteLine("Sales Name : {0}", sales.GetSalesAddress());
-            Console.WriteLine("Sales Address : {0}", sales.GetSalesAddress());
-
-            Console.Read();
         }
     }
-    class Developer : Department
+    class Department
     {
-        public string Name { get; set; }
-        public string Address { get; set; }
-        private string Post { get; set; }
-        private string BankAccountNumber { get; set; }
-        public string GetDeveloperName()
+        public string Subject { get; set; }
+        public string GetSubject()
         {
-            Name = "Omkar";
-            return Address;
-        }
-        public string  GetDeveloperAddress()
-        {
-            Address = "Sangli";
-            return Address;
+            Subject = "ASP.NET";
+            return Subject;
         }
 
     }
-    class Sales : Department
+    interface IMark
+    {
+        int GetMark();
+    }
+    class Student : Department, IMark
     {
         public string Name { get; set; }
-        public string Address { get; set; }
-        private string Post { get; set; }
-        private string BankAccountNumber { get; set; }
-        public string GetSalesAddress()
-        {
-            Address = "Miraj";
-            return Address;
-        }
-        public string GetSaleName()
+        public int Mark { get; set; }
+        public string GetName()
         {
             Name = "Aditya";
             return Name;
         }
+        public int GetMark()
+        {
+            Mark = 60;
+            return Mark;
+        }
     }
-
 }
