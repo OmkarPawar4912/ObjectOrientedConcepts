@@ -11,9 +11,12 @@ namespace OOPS
         public static void Main(string[] args)
         {
             Student student = new Student();
-            Console.WriteLine("Student Name :    {0}", student.GetName());
-            Console.WriteLine("Subject      :    {0}", student.GetSubject());
-            Console.WriteLine("Mark         :    {0}", student.GetMark());
+            Result result = new Result();
+
+            Console.WriteLine("Student Name  :    {0}", student.GetName());
+            Console.WriteLine("Subject       :    {0}", result.GetSubject());
+            Console.WriteLine("Project Title :    {0}", result.GetName());
+            Console.WriteLine("Mark          :    {0}", result.GetMark());
             Console.ReadLine();
 
         }
@@ -45,6 +48,15 @@ namespace OOPS
         {
             Mark = 60;
             return Mark;
+        }
+    }
+    class Result:Student
+    {
+        public string Name { get; set; }
+        public string GetName()
+        {
+            Name = "OOPS Concept";
+            return Name;
         }
     }
 }
