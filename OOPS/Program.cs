@@ -26,7 +26,7 @@ namespace OOPS
             return Subject;
         }
     }
-    interface IMark
+    interface IMark  //For Multiple Inheritance
     {
         int GetMark();
     }
