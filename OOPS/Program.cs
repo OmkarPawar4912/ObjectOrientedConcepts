@@ -1,57 +1,56 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace OOPS
 {
-    class Lecturer
+    public class Lecturer
     {
         public static void Main(string[] args)
         {
             Result result = new Result();
-            var student = (Student)result; //Cast
-
+            var student = (Student)result;
+            //Display Student Info
             Console.WriteLine("Student Name  :    {0}", student.GetName());
             Console.WriteLine("Subject       :    {0}", result.GetSubject());
             Console.WriteLine("Project Title :    {0}", result.GetName());
             Console.WriteLine("Mark          :    {0}", result.GetMark());
+            // To Hold Out Window
             Console.ReadLine();
         }
     }
-    class Department
+    public class Department
     {
         public string Subject { get; set; }
+        // To provide Project Title
         public string GetSubject()
         {
             Subject = "ASP.NET";
             return Subject;
         }
-
     }
     interface IMark
     {
         int GetMark();
     }
-    class Student : Department, IMark
+    public class Student : Department, IMark
     {
         public string Name { get; set; }
-        public int Mark { get; set; }
+        private int Mark { get; set; }
+        // To provide Student Name
         public string GetName()
         {
             Name = "Aditya";
             return Name;
         }
+        // To provide Student Mark
         public int GetMark()
         {
             Mark = 60;
             return Mark;
         }
     }
-    class Result:Student
+    public class Result:Student
     {
         public string Name { get; set; }
+        // To provide Project Name
         public string GetName()
         {
             Name = "OOPS Concept";
